@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\Battle-Ship-Game.csproj": {}
+    "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\Battle-Ship-Game.csproj": {
+    "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\Battle-Ship-Game.csproj",
+        "projectUniqueName": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
         "projectName": "Battle-Ship-Game",
-        "projectPath": "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\Battle-Ship-Game.csproj",
-        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\obj\\",
+        "projectPath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
+        "packagesPath": "/home/maria/.nuget/packages/",
+        "outputPath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/maria/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

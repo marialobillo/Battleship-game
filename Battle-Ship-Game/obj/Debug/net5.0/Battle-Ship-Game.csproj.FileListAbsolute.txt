@@ -1,0 +1,16 @@
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.csprojAssemblyReference.cache
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.GeneratedMSBuildEditorConfig.editorconfig
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.AssemblyInfoInputs.cache
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.AssemblyInfo.cs
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.csproj.CoreCompileInputs.cache
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game.deps.json
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game.runtimeconfig.json
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game.runtimeconfig.dev.json
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game.dll
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/ref/Battle-Ship-Game.dll
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/bin/Debug/net5.0/Battle-Ship-Game.pdb
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.dll
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/ref/Battle-Ship-Game.dll
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.pdb
+/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/Debug/net5.0/Battle-Ship-Game.genruntimeconfig.cache

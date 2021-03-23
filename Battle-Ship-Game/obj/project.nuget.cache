@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RmD+nSdRzxM3OVQM03D/9XnMCVZ+5qGRRx1csDXFtrc3hMNpPftOJPXNdPUBPp7JZhK1sAKQ1Iafv/55Wttv2w==",
+  "dgSpecHash": "m/cdHsFLTdkSrRt/+UzHd63fbl1jZzps8cZfK4XElg7KPaiwhmEDTwWXrPLc3JNbNDeNMcoSqvqTuaVkYeXrdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maria\\Projects\\csharp\\Battle-Ship-Game\\Battle-Ship-Game\\Battle-Ship-Game.csproj",
+  "projectFilePath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
