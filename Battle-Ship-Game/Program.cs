@@ -4,7 +4,7 @@ namespace Battle_Ship_Game
 {
     class Program
     {
-        
+        BattleShipGame game = new BattleShipGame();
 
         static void Main(string[] args)
         {
@@ -12,7 +12,8 @@ namespace Battle_Ship_Game
             //PrintWelcomeMessage();
 
             if(AskForNewGame()){
-                Console.WriteLine("Juguemos!!");
+                Console.WriteLine("We are gonna play!!");
+                game.initializeGame();
             }
 
             
