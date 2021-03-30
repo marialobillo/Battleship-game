@@ -6,7 +6,11 @@ namespace Battle_Ship_Game
     {
         private int maxNumberOfAttempts = 10;
 
+        public static void PlaceShip()
+        {
 
+        }
+        
         public static void AskForAShot()
         {
 

@@ -12,8 +12,19 @@ namespace Battle_Ship_Game
             bool isGamePlaying = AskStartGame();
 
             do{
-                
+                if(isGamePlaying == true)
+                {
+                    Console.WriteLine("We are gonna Play!!");
+
+                } 
+                else 
+                {
+                    Console.WriteLine("NO this time! NO GAME!!");
+                }
+                isGamePlaying = false;
             }while(isGamePlaying == true);
+
+            
         }
 
        
@@ -22,7 +33,7 @@ namespace Battle_Ship_Game
         }
 
         public static bool AskStartGame(){
-            Console.WriteLine("Do you want to start playing? (Answer: 'yes' or 'no' )");
+            Console.WriteLine("Do you want to start playing? (Please answer: 'yes' or 'no' )");
             bool isValidAnswer = false;
             do{
 
@@ -40,6 +51,7 @@ namespace Battle_Ship_Game
                     isValidAnswer = false;
                 }
             } while(isValidAnswer == false); 
+
             return false;
         }
 
