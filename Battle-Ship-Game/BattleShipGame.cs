@@ -9,11 +9,31 @@ namespace Battle_Ship_Game
         Player player = new Player();
 
         public static void InitializeGame(){
-            // Set the shit, place the ship
+            // Set the board, place the ship
 
             // Print the board game
 
-            
+
+        }
+
+        public static void placeBattleShip()
+        {
+            // Place randomly a 5 length battleship
+            Random random = new Random();
+            int direction = random.Next(0, 2);
+            int dimension = 10;
+
+            if(direction == 0)
+            {
+                // Horizontilly
+
+
+            } else if (direction == 1)
+            {
+                // Vertically
+            }
+
+
         }
     }
 }
