@@ -4,16 +4,16 @@ namespace Battle_Ship_Game
 {
     class Program
     {
-        BattleShipGame game = new BattleShipGame();
-
+        
         static void Main(string[] args)
         {
-            
+            BattleShipGame game = new BattleShipGame();
+
             //PrintWelcomeMessage();
 
             if(AskForNewGame()){
                 Console.WriteLine("We are gonna play!!");
-                game.initializeGame();
+                game.InitializeGame();
             }
 
             
