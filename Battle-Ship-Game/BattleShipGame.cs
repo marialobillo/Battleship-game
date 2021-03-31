@@ -7,20 +7,23 @@ namespace Battle_Ship_Game
     public class BattleShipGame
     {
         
-        BoardGame boardGame = new BoardGame();
+        public int[,] gameBoard = new int[10, 10]; 
         Player player = new Player();
 
         public void InitializeGame(){
 
-            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            // List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             
             // Set the board, place the ship
-            placeBattleShip();
+            initBoardGame();
+            printBoardGame();
+            // placeBattleShip();
 
             // Print the board game
 
 
         }
+
 
         public static void placeBattleShip()
         {
@@ -45,5 +48,44 @@ namespace Battle_Ship_Game
 
 
         }
+
+        public void initBoardGame()
+        {
+            Console.WriteLine("El tablero está aqui!!");
+            Console.WriteLine("========================");
+
+            foreach (var CoordX in numbers)
+            {
+                foreach (var CoordY in numbers)
+                {
+                    gameBoard[CoordX, CoordY] = SpotStatus.Empty;
+                }
+            }
+        }
+
+
+        public void printBoardGame()
+        {
+            foreach (var CoordX in numbers)
+            {
+                foreach (var CoordY in numbers)
+                {
+                   // Print the emptyness
+                   boardGame
+                }
+            }
+        }
+
+        // private static void AddPointToGameBoard(int CoordX, int CoordY)
+        // {
+        //     BoardGame point = new BoardGame
+        //     {
+        //         SpotX = CoordX;
+        //         SpotY = CoordY;
+        //         Status = SpotStatus.Empty;
+        //     }
+
+        //     boardGame.Add(point);
+        // }
     }
 }
