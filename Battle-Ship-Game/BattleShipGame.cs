@@ -7,12 +7,14 @@ namespace Battle_Ship_Game
     public class BattleShipGame
     {
         
-        public int[,] gameBoard = new int[10, 10]; 
+        public SpotStatus[,] gameBoard = new SpotStatus[10, 10]; 
         Player player = new Player();
+
+        List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
         public void InitializeGame(){
 
-            // List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            
             
             // Set the board, place the ship
             initBoardGame();
@@ -70,8 +72,15 @@ namespace Battle_Ship_Game
             {
                 foreach (var CoordY in numbers)
                 {
-                   // Print the emptyness
-                   boardGame
+                   // Print the board
+                   if(gameBoard[CoordX, CoordY] == SpotStatus.Empty){
+                       Console.Write('~');
+                   }
+                   if(CoordY == 9)
+                   {
+                       Console.Write('\n');
+                   }
+                   
                 }
             }
         }
