@@ -28,8 +28,8 @@ namespace Battle_Ship_Game
             PrintWelcomeMessage();
 
             Console.WriteLine("Do you want to play BattleShip Game?");
-            Console.WriteLine("Please type 'yes' or 'no'.");
-
+            Console.WriteLine("Please type 'yes' or 'no':");
+            Console.Write("> ");
             string input = Console.ReadLine();
             if(input == "no")
             {

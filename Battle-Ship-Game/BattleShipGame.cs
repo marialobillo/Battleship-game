@@ -53,9 +53,6 @@ namespace Battle_Ship_Game
 
         public void initBoardGame()
         {
-            Console.WriteLine("El tablero está aqui!!");
-            Console.WriteLine("========================");
-
             foreach (var CoordX in numbers)
             {
                 foreach (var CoordY in numbers)
@@ -68,13 +65,37 @@ namespace Battle_Ship_Game
 
         public void printBoardGame()
         {
+            string gridLine = "";
+            string secondLine = "===";
+            // Print 1-10 for columns
+            foreach (var CoordY in numbers){
+                gridLine = gridLine + "    " + (CoordY + 1);
+                secondLine = secondLine + "=====";
+            }
+            Console.WriteLine(gridLine);
+            Console.WriteLine(secondLine);
+            // Print the board
+            gridLine = "";
             foreach (var CoordX in numbers)
             {
+                gridLine = (CoordX + 1) + ") ";
                 foreach (var CoordY in numbers)
                 {
                    // Print the board
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Empty){
-                       Console.Write('~');
+                       gridLine = gridLine + "  ~  ";
+                   }
+                   if(gameBoard[CoordX, CoordY] == SpotStatus.Ship){
+                       gridLine = gridLine + " WPW ";
+                   }
+                   if(gameBoard[CoordX, CoordY] == SpotStatus.Miss){
+                       gridLine = gridLine + "  O  ";
+                   }
+                   if(gameBoard[CoordX, CoordY] == SpotStatus.Hit){
+                       gridLine = gridLine + "  X  ";
+                   }
+                   if(gameBoard[CoordX, CoordY] == SpotStatus.Sunk){
+                       gridLine = gridLine + "  [X]  ";
                    }
                    if(CoordY == 9)
                    {
@@ -82,6 +103,7 @@ namespace Battle_Ship_Game
                    }
                    
                 }
+                Console.WriteLine(gridLine);
             }
         }
 
