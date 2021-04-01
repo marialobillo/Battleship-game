@@ -18,16 +18,28 @@ namespace Battle_Ship_Game
             
             // Set the board, place the ship
             initBoardGame();
+            placeBattleShip();
             printBoardGame();
-            // placeBattleShip();
+            
 
             // Print the board game
 
 
         }
 
+         public void initBoardGame()
+        {
+            foreach (var CoordX in numbers)
+            {
+                foreach (var CoordY in numbers)
+                {
+                    gameBoard[CoordX, CoordY] = SpotStatus.Empty;
+                }
+            }
+        }
 
-        public static void placeBattleShip()
+
+        public void placeBattleShip()
         {
             // Place randomly a 5 length battleship
             Random random = new Random();
@@ -38,29 +50,63 @@ namespace Battle_Ship_Game
             {
                 // Horizontilly
                 direction = 0;
-                Console.Write("Horizontally {0}", direction);
+                Console.WriteLine("Horizontally {0}", direction);
+
+                
+                // For Coord_X we got from 0 - to (10-5) = 5
+                int CoordX = random.Next(0, 5);  // left side of the ship + 5 spots
+                // For Coord_Y we got the full range, and a constant for the ship
+                int CoordY = random.Next(0, 10);
+
+                Console.WriteLine("The X: {0}", CoordX);
+                Console.WriteLine("The Y: {0}", CoordY);
+
+                for (var i = CoordX; i <= CoordX + 4; i++)
+                {
+                    for(var j = CoordY; j <= CoordY; j ++)
+                    {
+                        //gameBoard[i, j] = SpotStatus.Ship;
+                        Console.WriteLine("i => " + i);
+                        Console.WriteLine("j => " + j);
+                        gameBoard[i, j] = SpotStatus.Ship;
+
+                    }
+                }
+
+
 
             } else            
             {
                 // Vertically
                 direction = 1;
-                Console.Write("Vertically {0}", direction);
-
-            }
+                Console.WriteLine("Vertically {0}", direction);
 
 
-        }
+                // For Coord_X we got the full range, and a constant for the ship
+                int CoordX = random.Next(0, 10);
+                // For Coord_Y we got from 0 - to (10-5) = 5
+                int CoordY = random.Next(0, 5);  // left side of the ship + 5 spots               
 
-        public void initBoardGame()
-        {
-            foreach (var CoordX in numbers)
-            {
-                foreach (var CoordY in numbers)
+                Console.WriteLine("The X: {0}", CoordX);
+                Console.WriteLine("The Y: {0}", CoordY);
+
+                for (var i = CoordX; i <= CoordX; i++)
                 {
-                    gameBoard[CoordX, CoordY] = SpotStatus.Empty;
+                    for(var j = CoordY; j <= CoordY + 4; j ++)
+                    {
+                        //gameBoard[i, j] = SpotStatus.Ship;
+                        Console.WriteLine("i => " + i);
+                        Console.WriteLine("j => " + j);
+                        gameBoard[i, j] = SpotStatus.Ship;
+                    }
                 }
+
             }
+
+
         }
+
+       
 
 
         public void printBoardGame()
