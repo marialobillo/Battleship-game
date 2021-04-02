@@ -41,12 +41,5 @@ namespace Battle_Ship_Game
         }
 
 
-        public bool ValidateShot(int Spot){
-            if(Spot < 1 || Spot > 10)
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

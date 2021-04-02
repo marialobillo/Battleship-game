@@ -31,13 +31,11 @@ namespace Battle_Ship_Game
             {
                 Console.WriteLine(" ************** Play!!!! *************");
                 // Ask Player for a Shot
-                player.playerShot = player.AskPlayerForShot();
-                bool isValidShot = player.ValidateShot(player.playerShot);
-                bool isUniqueShot = CheckUniqueShot(player.playerShot);
-                // Validate Shot
-                    // 1-10
-                    // haven't done yet
-                // Check the shot on board
+                
+               
+                bool isValidUniqueShot = AskForValidUniqueShot();
+                
+                // Check the Shot...hit, miss, 
                 // Update the board
                 // Notice the shot to the Player
             
@@ -45,6 +43,23 @@ namespace Battle_Ship_Game
                 // end the game
                 isGameActive = false;
             }
+        }
+
+        public bool AskForValidUniqueShot()
+        {
+            bool isValidShot = false;
+            bool isUniqueShot = false;
+
+            do 
+            {
+                player.playerShot = player.AskPlayerForShot();
+                isValidShot = player.ValidateShot(player.playerShot);
+                if(isValidShot){
+                    isUniqueShot = CheckUniqueShot(player.playerShot);
+                } 
+            } while( !isUniqueShot || !isValidShot);
+            
+            return isUniqueShot;
         }
 
         public void InitializeBoardGame()
