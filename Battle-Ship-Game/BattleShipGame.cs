@@ -12,17 +12,39 @@ namespace Battle_Ship_Game
 
         List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-        public void InitializeGame(){
+        public bool InitializeGame(){
 
             // Set the board, place the ship
-            initBoardGame();
+            InitializeBoardGame();
             placeBattleShip();
 
             // Print the board game
             printBoardGame();
+            
+            return true;
         }
 
-        public void initBoardGame()
+        public void GameLoop(bool isGameActive)
+        {
+
+             while(isGameActive)
+            {
+                Console.WriteLine(" ************** Play!!!! *************");
+                // Ask Player for a Shot
+                // Validate Shot
+                    // 1-10
+                    // haven't done yet
+                // Check the shot on board
+                // Update the board
+                // Notice the shot to the Player
+            
+
+                // end the game
+                isGameActive = false;
+            }
+        }
+
+        public void InitializeBoardGame()
         {
             foreach (var CoordX in numbers)
             {

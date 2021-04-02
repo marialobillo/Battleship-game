@@ -4,18 +4,23 @@ namespace Battle_Ship_Game
 {
     class Program
     {
+        public static bool isGameActive = false;
         
         static void Main(string[] args)
         {
+            // bool isGameActive = false;
             BattleShipGame game = new BattleShipGame();
-            Player player = new Player();
+            
 
             //PrintWelcomeMessage();
-
             if(AskForNewGame()){
                 Console.WriteLine("We are gonna play!!");
-                game.InitializeGame();
+                isGameActive = game.InitializeGame();
             }
+
+            
+
+           game.GameLoop(isGameActive);
 
             
         }
@@ -23,8 +28,8 @@ namespace Battle_Ship_Game
         public static bool AskForNewGame()
         {
             
-
-            bool isGameActive = false;
+            bool isPlayerReady = false;
+            
           
             PrintWelcomeMessage();
 
@@ -34,12 +39,17 @@ namespace Battle_Ship_Game
             string input = Console.ReadLine();
             if(input == "no")
             {
-                isGameActive = false;
+                isPlayerReady = false;
             } else if(input == "yes"){
-                isGameActive = true;
+                isPlayerReady = true;
             }
             
-            return isGameActive;
+            return isPlayerReady;
+        }
+
+        public static void AskUserForShot()
+        {
+
         }
 
         public static void PrintWelcomeMessage()
