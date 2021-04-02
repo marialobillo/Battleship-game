@@ -31,6 +31,9 @@ namespace Battle_Ship_Game
             {
                 Console.WriteLine(" ************** Play!!!! *************");
                 // Ask Player for a Shot
+                player.playerShot = player.AskPlayerForShot();
+                bool isValidShot = player.ValidateShot(player.playerShot);
+                bool isUniqueShot = isUniqueShot(player.playerShot);
                 // Validate Shot
                     // 1-10
                     // haven't done yet
@@ -168,6 +171,25 @@ namespace Battle_Ship_Game
                 }
                 Console.WriteLine(gridLine);
             }
+        }
+
+        public bool isUniqueShot(Shot shotToValidate)
+        {
+            bool isUniqueShot = true;
+
+            foreach (var CoordX in numbers)
+            {
+                foreach (var CoordY in numbers)
+                {
+                    if(gameBoard[shotToValidate.SpotX,shotToValidate.SpotY] == SpotStatus.Hit ||
+                    gameBoard[shotToValidate.SpotX,shotToValidate.SpotY] == SpotStatus.Miss)
+                    {
+                        isUniqueShot = false;
+                    }
+                }
+            }
+
+            return isUniqueShot;
         }
 
     }

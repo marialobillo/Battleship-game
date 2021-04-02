@@ -9,20 +9,40 @@ namespace Battle_Ship_Game
 
         public Shot AskPlayerForShot()
         {
-            Console.WriteLine("It's your turn. Make a valid shot. Numbers from 1 to 10 only.");
+            Console.WriteLine("Make a valid shot. Numbers from 1 to 10 only.");
 
             Console.WriteLine("X axis: ");
-            playerShot.SpotX = Convert.ToInt32(Console.ReadLine());
+            string inputX = Console.ReadLine();
+            int SpotX;
+            if(Int32.TryParse(inputX, out SpotX)){
+                playerShot.SpotX = SpotX;
+            }
             
             Console.WriteLine("Y axis: ");
-            playerShot.SpotY = Convert.ToInt32(Console.ReadLine());
+            string inputY = Console.ReadLine();
+            int SpotY;
+            if(Int32.TryParse(inputY, out SpotY)){
+                playerShot.SpotY = SpotY;
+            }
 
             return playerShot;
         }
 
+        public bool ValidateShot(Shot shotToValidate)
+        {
+            bool isValidShot = true;
+            if( (shotToValidate.SpotX > 10 || shotToValidate.SpotX < 1) ||
+                (shotToValidate.SpotY > 10 || shotToValidate.SpotY < 1) )
+            {
+                isValidShot = false;
+            }
+            
+            return isValidShot;
+        }
+
 
         public bool ValidateShot(int Spot){
-            if(Spot > 10 || Spot < 1)
+            if(Spot < 1 || Spot > 10)
             {
                 return false;
             }
