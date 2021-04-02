@@ -14,20 +14,15 @@ namespace Battle_Ship_Game
 
         public void InitializeGame(){
 
-            
-            
             // Set the board, place the ship
             initBoardGame();
             placeBattleShip();
-            printBoardGame();
-            
 
             // Print the board game
-
-
+            printBoardGame();
         }
 
-         public void initBoardGame()
+        public void initBoardGame()
         {
             foreach (var CoordX in numbers)
             {
@@ -153,16 +148,5 @@ namespace Battle_Ship_Game
             }
         }
 
-        // private static void AddPointToGameBoard(int CoordX, int CoordY)
-        // {
-        //     BoardGame point = new BoardGame
-        //     {
-        //         SpotX = CoordX;
-        //         SpotY = CoordY;
-        //         Status = SpotStatus.Empty;
-        //     }
-
-        //     boardGame.Add(point);
-        // }
     }
 }

@@ -8,6 +8,7 @@ namespace Battle_Ship_Game
         static void Main(string[] args)
         {
             BattleShipGame game = new BattleShipGame();
+            Player player = new Player();
 
             //PrintWelcomeMessage();
 
