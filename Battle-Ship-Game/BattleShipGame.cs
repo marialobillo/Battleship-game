@@ -33,7 +33,7 @@ namespace Battle_Ship_Game
                 // Ask Player for a Shot
                 player.playerShot = player.AskPlayerForShot();
                 bool isValidShot = player.ValidateShot(player.playerShot);
-                bool isUniqueShot = isUniqueShot(player.playerShot);
+                bool isUniqueShot = CheckUniqueShot(player.playerShot);
                 // Validate Shot
                     // 1-10
                     // haven't done yet
@@ -173,7 +173,7 @@ namespace Battle_Ship_Game
             }
         }
 
-        public bool isUniqueShot(Shot shotToValidate)
+        public bool CheckUniqueShot(Shot shotToValidate)
         {
             bool isUniqueShot = true;
 
