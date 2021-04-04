@@ -12,6 +12,9 @@ namespace Battle_Ship_Game
 
         List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
+        int Attemps = 10;
+        int ShipHits = 5;
+
         public bool InitializeGame(){
 
             // Set the board, place the ship
@@ -29,16 +32,22 @@ namespace Battle_Ship_Game
 
              while(isGameActive)
             {
-                Console.WriteLine(" ************** Play!!!! *************");
+                Console.WriteLine(" ************** Let's Play!!!! *************");
                 // Ask Player for a Shot
                 
                
                 bool isValidUniqueShot = AskForValidUniqueShot();
-                
+                bool isCheckedShot;
                 // Check the Shot...hit, miss, 
                 // Update the board
                 // Notice the shot to the Player
-            
+                if(isValidUniqueShot)
+                {
+                    isCheckedShot = CheckShotOnBoard();
+                }
+
+
+
 
                 // end the game
                 isGameActive = false;
@@ -60,6 +69,28 @@ namespace Battle_Ship_Game
             } while( !isUniqueShot || !isValidShot);
             
             return isUniqueShot;
+        }
+
+        public bool CheckShotOnBoard()
+        {
+            int SpotX = player.playerShot.SpotX;
+            int SpotY = player.playerShot.SpotY;
+
+            if(gameBoard[SpotX, SpotY] == SpotStatus.Ship)
+            {
+                // We are shotting on the ship
+                // We have to count 5 - 1 = on the ship
+                ShipHits = ShipHits - 1;
+                // For the attemps 10 - 1
+                Attemps = Attemps - 1;
+                gameBoard[SpotX, SpotY] = SpotStatus.Hit;
+            } else if (gameBoard[SpotX, SpotY] == SpotStatus.Empty)
+            {
+                // For the attemps 10 - 1 = water
+                Attemps = Attemps - 1;
+                gameBoard[SpotX, SpotY] = SpotStatus.Miss;
+            }
+            return true;
         }
 
         public void InitializeBoardGame()
