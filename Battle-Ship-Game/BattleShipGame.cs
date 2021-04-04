@@ -37,7 +37,7 @@ namespace Battle_Ship_Game
                 
                
                 bool isValidUniqueShot = AskForValidUniqueShot();
-                bool isCheckedShot;
+                bool isCheckedShot = false;
                 // Check the Shot...hit, miss, 
                 // Update the board
                 // Notice the shot to the Player
@@ -46,7 +46,14 @@ namespace Battle_Ship_Game
                     isCheckedShot = CheckShotOnBoard();
                 }
 
-
+                if(isCheckedShot)
+                {
+                    if(Attemps == 0 || ShipHits == 0)
+                    {
+                        // GameOver or we wont!!
+                        isGameActive = false;
+                    }
+                }
 
 
                 // end the game
