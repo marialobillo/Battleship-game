@@ -48,6 +48,7 @@ namespace Battle_Ship_Game
 
                 if(isCheckedShot)
                 {
+                    printBoardGame();
                     if(Attemps == 0 || ShipHits == 0)
                     {
                         // GameOver or we wont!!
@@ -57,7 +58,7 @@ namespace Battle_Ship_Game
 
 
                 // end the game
-                isGameActive = false;
+                // isGameActive = false;
             }
         }
 
@@ -184,6 +185,7 @@ namespace Battle_Ship_Game
 
         public void printBoardGame()
         {
+            Console.Clear();
             string gridLine = "";
             string secondLine = "===";
             // Print 1-10 for columns

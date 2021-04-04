@@ -15,14 +15,14 @@ namespace Battle_Ship_Game
             string inputX = Console.ReadLine();
             int SpotX;
             if(Int32.TryParse(inputX, out SpotX)){
-                playerShot.SpotX = SpotX;
+                playerShot.SpotX = SpotX - 1;
             }
             
             Console.WriteLine("Y axis: ");
             string inputY = Console.ReadLine();
             int SpotY;
             if(Int32.TryParse(inputY, out SpotY)){
-                playerShot.SpotY = SpotY;
+                playerShot.SpotY = SpotY - 1;
             }
 
             return playerShot;
@@ -31,8 +31,8 @@ namespace Battle_Ship_Game
         public bool ValidateShot(Shot shotToValidate)
         {
             bool isValidShot = true;
-            if( (shotToValidate.SpotX > 10 || shotToValidate.SpotX < 1) ||
-                (shotToValidate.SpotY > 10 || shotToValidate.SpotY < 1) )
+            if( (shotToValidate.SpotX > 9 || shotToValidate.SpotX < 0) ||
+                (shotToValidate.SpotY > 9 || shotToValidate.SpotY < 0) )
             {
                 isValidShot = false;
             }
