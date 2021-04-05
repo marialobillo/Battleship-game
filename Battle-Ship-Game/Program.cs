@@ -11,6 +11,7 @@ namespace Battle_Ship_Game
             // bool isGameActive = false;
             BattleShipGame game = new BattleShipGame();
             
+            
 
             //PrintWelcomeMessage();
             if(AskForNewGame()){
@@ -27,11 +28,11 @@ namespace Battle_Ship_Game
 
         public static bool AskForNewGame()
         {
-            
+            Message message = new Message();
             bool isPlayerReady = false;
             
           
-            PrintWelcomeMessage();
+            message.PrintWelcomeMessage();
 
             Console.WriteLine("Do you want to play BattleShip Game?");
             Console.WriteLine("Please type 'yes' or 'no':");
@@ -52,13 +53,7 @@ namespace Battle_Ship_Game
 
         }
 
-        public static void PrintWelcomeMessage()
-        {
-            Console.Clear();
-            Console.WriteLine(" ** BattleShip Game ** ");
-            Console.WriteLine("=======================");
-
-        }
+       
 
        
         

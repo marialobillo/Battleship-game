@@ -9,6 +9,7 @@ namespace Battle_Ship_Game
         
         public SpotStatus[,] gameBoard = new SpotStatus[10, 10]; 
         Player player = new Player();
+        Message message = new Message();
 
         List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
@@ -32,7 +33,6 @@ namespace Battle_Ship_Game
 
              while(isGameActive)
             {
-                Console.WriteLine(" ************** Let's Play!!!! *************");
                 // Ask Player for a Shot
                 
                
@@ -55,6 +55,8 @@ namespace Battle_Ship_Game
                         isGameActive = false;
                     }
                 }
+                Console.WriteLine("Attemps: {0}", Attemps);
+                Console.WriteLine("Hits Remains: {0}", 5 - ShipHits);
 
 
                 // end the game
@@ -185,13 +187,14 @@ namespace Battle_Ship_Game
 
         public void printBoardGame()
         {
-            Console.Clear();
+            message.PrintWelcomeMessage();
+
             string gridLine = "";
-            string secondLine = "===";
+            string secondLine = "---";
             // Print 1-10 for columns
             foreach (var CoordY in numbers){
                 gridLine = gridLine + "    " + (CoordY + 1);
-                secondLine = secondLine + "=====";
+                secondLine = secondLine + "-----";
             }
             Console.WriteLine(gridLine);
             Console.WriteLine(secondLine);
