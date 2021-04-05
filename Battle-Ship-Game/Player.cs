@@ -12,6 +12,7 @@ namespace Battle_Ship_Game
             Console.WriteLine("Make a valid shot. Numbers from 1 to 10 only.");
 
             Console.WriteLine("X axis: ");
+            Console.Write("> ");
             string inputX = Console.ReadLine();
             int SpotX;
             if(Int32.TryParse(inputX, out SpotX)){
@@ -19,6 +20,7 @@ namespace Battle_Ship_Game
             }
             
             Console.WriteLine("Y axis: ");
+            Console.Write("> ");
             string inputY = Console.ReadLine();
             int SpotY;
             if(Int32.TryParse(inputY, out SpotY)){
