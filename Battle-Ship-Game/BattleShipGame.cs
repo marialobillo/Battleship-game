@@ -55,13 +55,19 @@ namespace Battle_Ship_Game
                         isGameActive = false;
                     }
                 }
-                Console.WriteLine("Attemps: {0}", Attemps);
-                Console.WriteLine("Hits Remains: {0}", 5 - ShipHits);
-
+                
+                PrintAttempsAndHits();
 
                 // end the game
                 // isGameActive = false;
             }
+        }
+
+        public void PrintAttempsAndHits()
+        {
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("|    Attemps: {0}        |    Hits: {1}          |", Attemps, ShipHits);
+            Console.WriteLine("----------------------------------------------");
         }
 
         public bool AskForValidUniqueShot()
@@ -128,28 +134,20 @@ namespace Battle_Ship_Game
                 direction = 0;
                 Console.WriteLine("Horizontally {0}", direction);
 
-                
                 // For Coord_X we got from 0 - to (10-5) = 5
                 int CoordX = random.Next(0, 5);  // left side of the ship + 5 spots
                 // For Coord_Y we got the full range, and a constant for the ship
                 int CoordY = random.Next(0, 10);
-
-                Console.WriteLine("The X: {0}", CoordX);
-                Console.WriteLine("The Y: {0}", CoordY);
 
                 for (var i = CoordX; i <= CoordX + 4; i++)
                 {
                     for(var j = CoordY; j <= CoordY; j ++)
                     {
                         //gameBoard[i, j] = SpotStatus.Ship;
-                        Console.WriteLine("i => " + i);
-                        Console.WriteLine("j => " + j);
                         gameBoard[i, j] = SpotStatus.Ship;
 
                     }
                 }
-
-
 
             } else            
             {
@@ -157,14 +155,10 @@ namespace Battle_Ship_Game
                 direction = 1;
                 Console.WriteLine("Vertically {0}", direction);
 
-
                 // For Coord_X we got the full range, and a constant for the ship
                 int CoordX = random.Next(0, 10);
                 // For Coord_Y we got from 0 - to (10-5) = 5
                 int CoordY = random.Next(0, 5);  // left side of the ship + 5 spots               
-
-                Console.WriteLine("The X: {0}", CoordX);
-                Console.WriteLine("The Y: {0}", CoordY);
 
                 for (var i = CoordX; i <= CoordX; i++)
                 {
@@ -200,10 +194,10 @@ namespace Battle_Ship_Game
             Console.WriteLine(secondLine);
             // Print the board
             gridLine = "";
-            foreach (var CoordX in numbers)
+            foreach (var CoordY in numbers)
             {
-                gridLine = (CoordX + 1) + ") ";
-                foreach (var CoordY in numbers)
+                gridLine = (CoordY + 1) + ") ";
+                foreach (var CoordX in numbers)
                 {
                    // Print the board
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Empty){
@@ -219,9 +213,9 @@ namespace Battle_Ship_Game
                        gridLine = gridLine + "  X  ";
                    }
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Sunk){
-                       gridLine = gridLine + "  [X]  ";
+                       gridLine = gridLine + " !!X!! ";
                    }
-                   if(CoordY == 9)
+                   if(CoordX == 9)
                    {
                        Console.Write('\n');
                    }
