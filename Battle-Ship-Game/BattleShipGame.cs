@@ -16,6 +16,9 @@ namespace Battle_Ship_Game
         int Attemps = 10;
         int ShipHits = 5;
 
+        bool isMissShot = true;
+        bool isCheckedShot = false;
+
         public bool InitializeGame(){
 
             // Set the board, place the ship
@@ -37,14 +40,16 @@ namespace Battle_Ship_Game
                 
                
                 bool isValidUniqueShot = AskForValidUniqueShot();
-                bool isCheckedShot = false;
+               
                 // Check the Shot...hit, miss, 
                 // Update the board
                 // Notice the shot to the Player
                 if(isValidUniqueShot)
                 {
                     isCheckedShot = CheckShotOnBoard();
-                }
+                } 
+
+               
 
                 if(isCheckedShot)
                 {
@@ -66,7 +71,7 @@ namespace Battle_Ship_Game
         public void PrintAttempsAndHits()
         {
             Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("|    Attemps: {0}        |    Hits: {1}          |", Attemps, ShipHits);
+            Console.WriteLine("|    Remaining attemps: {0}     |    Hits: {1}    |", Attemps, ShipHits);
             Console.WriteLine("----------------------------------------------");
         }
 
@@ -98,6 +103,7 @@ namespace Battle_Ship_Game
                 // We have to count 5 - 1 = on the ship
                 ShipHits = ShipHits - 1;
                 // For the attemps 10 - 1
+                isMissShot = false;
                 Attemps = Attemps - 1;
                 gameBoard[SpotX, SpotY] = SpotStatus.Hit;
             } else if (gameBoard[SpotX, SpotY] == SpotStatus.Empty)
@@ -105,6 +111,7 @@ namespace Battle_Ship_Game
                 // For the attemps 10 - 1 = water
                 Attemps = Attemps - 1;
                 gameBoard[SpotX, SpotY] = SpotStatus.Miss;
+                isMissShot = true;
             }
             return true;
         }
@@ -132,7 +139,6 @@ namespace Battle_Ship_Game
             {
                 // Horizontilly
                 direction = 0;
-                Console.WriteLine("Horizontally {0}", direction);
 
                 // For Coord_X we got from 0 - to (10-5) = 5
                 int CoordX = random.Next(0, 5);  // left side of the ship + 5 spots
@@ -143,7 +149,6 @@ namespace Battle_Ship_Game
                 {
                     for(var j = CoordY; j <= CoordY; j ++)
                     {
-                        //gameBoard[i, j] = SpotStatus.Ship;
                         gameBoard[i, j] = SpotStatus.Ship;
 
                     }
@@ -153,7 +158,6 @@ namespace Battle_Ship_Game
             {
                 // Vertically
                 direction = 1;
-                Console.WriteLine("Vertically {0}", direction);
 
                 // For Coord_X we got the full range, and a constant for the ship
                 int CoordX = random.Next(0, 10);
@@ -164,9 +168,6 @@ namespace Battle_Ship_Game
                 {
                     for(var j = CoordY; j <= CoordY + 4; j ++)
                     {
-                        //gameBoard[i, j] = SpotStatus.Ship;
-                        Console.WriteLine("i => " + i);
-                        Console.WriteLine("j => " + j);
                         gameBoard[i, j] = SpotStatus.Ship;
                     }
                 }
@@ -182,6 +183,7 @@ namespace Battle_Ship_Game
         public void printBoardGame()
         {
             message.PrintWelcomeMessage();
+           
 
             string gridLine = "";
             string secondLine = "---";
@@ -222,7 +224,13 @@ namespace Battle_Ship_Game
                    
                 }
                 Console.WriteLine(gridLine);
-            }
+            }   
+
+             if(isCheckedShot)
+            {
+                message.PrintShotResult(isMissShot);
+
+            }         
         }
 
         public bool CheckUniqueShot(Shot shotToValidate)

@@ -15,7 +15,6 @@ namespace Battle_Ship_Game
 
             //PrintWelcomeMessage();
             if(AskForNewGame()){
-                Console.WriteLine("We are gonna play!!");
                 isGameActive = game.InitializeGame();
             }
 
@@ -35,13 +34,10 @@ namespace Battle_Ship_Game
             message.PrintWelcomeMessage();
 
             Console.WriteLine("Do you want to play BattleShip Game?");
-            Console.WriteLine("Please type 'yes' or 'no':");
+            Console.WriteLine("Please type 'yes' or something else to quit:");
             Console.Write("> ");
             string input = Console.ReadLine();
-            if(input == "no")
-            {
-                isPlayerReady = false;
-            } else if(input == "yes"){
+            if(input == "yes"){
                 isPlayerReady = true;
             }
             
