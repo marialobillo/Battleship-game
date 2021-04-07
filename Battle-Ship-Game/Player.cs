@@ -9,34 +9,39 @@ namespace Battle_Ship_Game
 
         public Shot AskPlayerForShot()
         {
-            Console.WriteLine("Make a valid shot. Numbers from 1 to 10 only.");
-
+            Console.WriteLine("Make a valid shot. Numbers from 1 to 10 only. \n");
+            // Asking X axis coordinate
             Console.WriteLine("X axis: ");
             Console.Write("> ");
             string inputX = Console.ReadLine();
             int SpotX;
             if(Int32.TryParse(inputX, out SpotX)){
                 playerShot.SpotX = SpotX - 1;
+            } else {
+                playerShot.SpotX = 11;  // Out of grid range
             }
-            
+            // Asking Y axis coordinate   
             Console.WriteLine("Y axis: ");
             Console.Write("> ");
             string inputY = Console.ReadLine();
             int SpotY;
             if(Int32.TryParse(inputY, out SpotY)){
                 playerShot.SpotY = SpotY - 1;
+            } else {
+                playerShot.SpotY = 11;
             }
-
             return playerShot;
         }
 
         public bool ValidateShot(Shot shotToValidate)
         {
-            bool isValidShot = true;
-            if( (shotToValidate.SpotX > 9 || shotToValidate.SpotX < 0) ||
-                (shotToValidate.SpotY > 9 || shotToValidate.SpotY < 0) )
+            bool isValidShot = false;
+            if( (shotToValidate.SpotX < 10 && shotToValidate.SpotX >= 0) &&
+                (shotToValidate.SpotY < 10 && shotToValidate.SpotY >= 0) )
             {
-                isValidShot = false;
+                isValidShot = true;
+                Console.WriteLine("X : ", shotToValidate.SpotX);
+                Console.WriteLine("Y : ", shotToValidate.SpotY);
             }
             
             return isValidShot;

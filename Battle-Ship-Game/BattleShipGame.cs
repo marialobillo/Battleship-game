@@ -85,9 +85,14 @@ namespace Battle_Ship_Game
                 player.playerShot = player.AskPlayerForShot();
                 isValidShot = player.ValidateShot(player.playerShot);
                 if(isValidShot){
-                    isUniqueShot = CheckUniqueShot(player.playerShot);
-                } 
-            } while( !isUniqueShot || !isValidShot);
+                    // isUniqueShot = CheckUniqueShot(player.playerShot);
+                    Console.WriteLine("IsValidShot is TRUE");
+
+                } else 
+                {
+                    Console.WriteLine("IsValidShot is FALSE");
+                }
+            } while(!isValidShot);
             
             return isUniqueShot;
         }
