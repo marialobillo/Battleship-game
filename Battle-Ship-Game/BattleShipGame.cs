@@ -17,7 +17,7 @@ namespace Battle_Ship_Game
         int ShipHits = 5;
 
         bool isMissShot = true;
-        bool isCheckedShot = false;
+        ShotStatus isCheckedShot = ShotStatus.NoValidated;
 
         public bool InitializeGame(){
 
@@ -85,14 +85,12 @@ namespace Battle_Ship_Game
                 player.playerShot = player.AskPlayerForShot();
                 isValidShot = player.ValidateShot(player.playerShot);
                 if(isValidShot){
-                    // isUniqueShot = CheckUniqueShot(player.playerShot);
-                    Console.WriteLine("IsValidShot is TRUE");
-
+                    isUniqueShot = CheckUniqueShot(player.playerShot);
                 } else 
                 {
                     Console.WriteLine("IsValidShot is FALSE");
                 }
-            } while(!isValidShot);
+            } while(!isUniqueShot);
             
             return isUniqueShot;
         }
@@ -231,7 +229,7 @@ namespace Battle_Ship_Game
                 Console.WriteLine(gridLine);
             }   
 
-             if(isCheckedShot)
+            if(isCheckedShot)
             {
                 message.PrintShotResult(isMissShot);
 

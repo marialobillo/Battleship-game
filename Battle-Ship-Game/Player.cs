@@ -18,7 +18,7 @@ namespace Battle_Ship_Game
             if(Int32.TryParse(inputX, out SpotX)){
                 playerShot.SpotX = SpotX - 1;
             } else {
-                playerShot.SpotX = 11;  // Out of grid range
+                playerShot.SpotX = 12;  // Out of grid range
             }
             // Asking Y axis coordinate   
             Console.WriteLine("Y axis: ");
@@ -28,7 +28,7 @@ namespace Battle_Ship_Game
             if(Int32.TryParse(inputY, out SpotY)){
                 playerShot.SpotY = SpotY - 1;
             } else {
-                playerShot.SpotY = 11;
+                playerShot.SpotY = 12;
             }
             return playerShot;
         }
