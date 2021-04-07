@@ -17,7 +17,8 @@ namespace Battle_Ship_Game
         int ShipHits = 5;
 
         bool isMissShot = true;
-        ShotStatus isCheckedShot = ShotStatus.NoValidated;
+        // ShotStatus isCheckedShot = ShotStatus.NoValidated;
+        bool isCheckedShot = false;
 
         public bool InitializeGame(){
 
