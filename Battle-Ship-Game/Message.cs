@@ -20,7 +20,7 @@ namespace Battle_Ship_Game
             Console.WriteLine("\n");
             if(isMissShot)
             {
-                Console.WriteLine("\t** You missed the shot. Try again!! **");
+                Console.WriteLine("\t** You MISSED the shot. Try again!! **");
             } 
             else
             {

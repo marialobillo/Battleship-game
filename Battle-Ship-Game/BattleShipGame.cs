@@ -60,7 +60,7 @@ namespace Battle_Ship_Game
                     if(Attemps == 0 || ShipHits == 0)
                     {
                         // GameOver or we wont!!
-                        if(ShipHits == 5 && Attemps >= 0)
+                        if(ShipHits == 0 && Attemps >= 0)
                         {
                             isGameActive = false;
                             isShipSunk = true;
@@ -75,7 +75,7 @@ namespace Battle_Ship_Game
                 if(isShipSunk)
                 {
                     Console.WriteLine("**********************************");
-                    Console.WriteLine(" **********   YOU WON!!! *********");
+                    Console.WriteLine(" **********  YOU WON!!! **********");
                     Console.WriteLine("**********************************");
                 }
 
@@ -87,7 +87,7 @@ namespace Battle_Ship_Game
         public void PrintAttempsAndHits()
         {
             Console.WriteLine("----------------------------------------------");
-            Console.WriteLine("|    Remaining attemps: {0}     |    Hits: {1}    |", Attemps, ShipHits);
+            Console.WriteLine("|    Remaining attemps: {0}     |    Hits: {1}    |", Attemps, 5 - ShipHits);
             Console.WriteLine("----------------------------------------------");
         }
 
