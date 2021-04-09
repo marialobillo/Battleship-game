@@ -20,6 +20,8 @@ namespace Battle_Ship_Game
         // ShotStatus isCheckedShot = ShotStatus.NoValidated;
         bool isCheckedShot = false;
 
+        bool isShipSunk = false;
+
         public bool InitializeGame(){
 
             // Set the board, place the ship
@@ -58,11 +60,24 @@ namespace Battle_Ship_Game
                     if(Attemps == 0 || ShipHits == 0)
                     {
                         // GameOver or we wont!!
+                        if(ShipHits == 5 && Attemps >= 0)
+                        {
+                            isGameActive = false;
+                            isShipSunk = true;
+                        }
                         isGameActive = false;
                     }
                 }
                 
                 PrintAttempsAndHits();
+
+                
+                if(isShipSunk)
+                {
+                    Console.WriteLine("**********************************");
+                    Console.WriteLine(" **********   YOU WON!!! *********");
+                    Console.WriteLine("**********************************");
+                }
 
                 // end the game
                 // isGameActive = false;
@@ -89,7 +104,9 @@ namespace Battle_Ship_Game
                     isUniqueShot = CheckUniqueShot(player.playerShot);
                 } else 
                 {
-                    Console.WriteLine("IsValidShot is FALSE");
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("** INVALID SHOT **. Please enter valid shot.");
+                    Console.WriteLine("------------------------------------------------");
                 }
             } while(!isUniqueShot);
             

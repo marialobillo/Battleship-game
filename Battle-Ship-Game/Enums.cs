@@ -13,8 +13,14 @@ namespace Battle_Ship_Game
 
     public enum ShotStatus
     {
-        NoValidated = 0,
+        InValid = 0,
         Valid = 1,
-        Unique = 2
+        Unique = 2,
+
+        Miss = 3,
+
+        Hit = 4,
+
+        Sunk = 5
     }
 }
