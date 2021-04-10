@@ -153,14 +153,12 @@ namespace Battle_Ship_Game
         {
             // Place randomly a 5 length battleship
             Random random = new Random();
-            int direction = 0;
+            int direction = random.Next(0,2) % 2;
             // int dimension = 10;
 
-            if( (random.Next(0,2) % 2) == 0 )
+            if( direction == 0 )
             {
                 // Horizontilly
-                direction = 0;
-
                 // For Coord_X we got from 0 - to (10-5) = 5
                 int CoordX = random.Next(0, 5);  // left side of the ship + 5 spots
                 // For Coord_Y we got the full range, and a constant for the ship
@@ -174,12 +172,9 @@ namespace Battle_Ship_Game
 
                     }
                 }
-
             } else            
             {
                 // Vertically
-                direction = 1;
-
                 // For Coord_X we got the full range, and a constant for the ship
                 int CoordX = random.Next(0, 10);
                 // For Coord_Y we got from 0 - to (10-5) = 5
@@ -194,8 +189,6 @@ namespace Battle_Ship_Game
                 }
 
             }
-
-
         }
 
        
