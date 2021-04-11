@@ -204,13 +204,13 @@ namespace Battle_Ship_Game
 
             string gridLine = "";
             string secondLine = "---";
-            // Print 1-10 for columns
-            foreach (var CoordY in numbers){
-                gridLine = gridLine + "    " + (CoordY + 1);
-                secondLine = secondLine + "-----";
-            }
-            Console.WriteLine(gridLine);
-            Console.WriteLine(secondLine);
+            // // Print 1-10 for columns
+            // foreach (var CoordY in numbers){
+            //     gridLine = gridLine + "    " + (CoordY + 1);
+            //     secondLine = secondLine + "-----";
+            // }
+            // Console.WriteLine(gridLine);
+            // Console.WriteLine(secondLine);
             // Print the board
             gridLine = "";
             foreach (var CoordY in numbers)
@@ -236,12 +236,22 @@ namespace Battle_Ship_Game
                    }
                    if(CoordX == 9)
                    {
-                       Console.Write('\n');
+                       Console.WriteLine("                                                     ");
                    }
                    
                 }
                 Console.WriteLine(gridLine);
-            }   
+            } 
+
+            gridLine = "";
+            // Print 1-10 for columns
+            foreach (var CoordY in numbers){
+                gridLine = gridLine + "    " + (CoordY + 1);
+                secondLine = secondLine + "-----";
+            }
+            Console.WriteLine(secondLine);
+            Console.WriteLine(gridLine);  
+            Console.WriteLine(secondLine);
 
             if(isCheckedShot)
             {

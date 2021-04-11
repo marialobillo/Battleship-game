@@ -20,22 +20,22 @@ namespace Battle_Ship_Game
             Console.WriteLine("\n");
             if(isMissShot)
             {
-                Console.WriteLine("\t** You MISSED the shot. Try again!! **");
+                Console.WriteLine("\t*** You MISS. Try again!! ***");
             } 
             else
             {
-                Console.WriteLine("\t** You hit the BattleShit!! Well done!! **");
+                Console.WriteLine("\t*** You HIT. Well done!! ***");
             }
-            Console.WriteLine("*************************************************");
+            Console.WriteLine("-----------------------------------------------");
             
         }
         
         public void PrintGameOver()
         {
             ChangeConsoleColor(ConsoleColor.Red, ConsoleColor.White);
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine("----------- GAME OVER --------------------");
-            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("//////////////////////////////////////////");
+            Console.WriteLine("/////////// GAME OVER ////////////////////");
+            Console.WriteLine("//////////////////////////////////////////");
             Console.ResetColor();
         }
 
