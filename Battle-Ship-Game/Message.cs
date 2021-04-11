@@ -29,5 +29,29 @@ namespace Battle_Ship_Game
             Console.WriteLine("*************************************************");
             
         }
+        
+        public void PrintGameOver()
+        {
+            ChangeConsoleColor(ConsoleColor.Red, ConsoleColor.White);
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("----------- GAME OVER --------------------");
+            Console.WriteLine("------------------------------------------");
+            Console.ResetColor();
+        }
+
+        public void PrintGameWon()
+        {
+            ChangeConsoleColor(ConsoleColor.Green, ConsoleColor.White);
+            Console.WriteLine("******************************************");
+            Console.WriteLine("***********  YOU WIN!!! ******************");
+            Console.WriteLine("******************************************");
+            Console.ResetColor();
+        }
+
+        public void ChangeConsoleColor(ConsoleColor backgroundColor, ConsoleColor foregroundColor)
+        {
+            Console.BackgroundColor = backgroundColor;
+            Console.ForegroundColor = foregroundColor;
+        }
     }
 }

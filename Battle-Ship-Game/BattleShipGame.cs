@@ -7,7 +7,7 @@ namespace Battle_Ship_Game
     public class BattleShipGame
     {
         
-        public SpotStatus[,] gameBoard = new SpotStatus[10, 10]; 
+        public SpotStatus[,] gameBoard = new SpotStatus[10, 10]; // 10x10 grid
         Player player = new Player();
         Message message = new Message();
 
@@ -17,7 +17,6 @@ namespace Battle_Ship_Game
         int ShipHits = 5;
 
         bool isMissShot = true;
-        // ShotStatus isCheckedShot = ShotStatus.NoValidated;
         bool isCheckedShot = false;
 
         bool isShipSunk = false;
@@ -60,7 +59,7 @@ namespace Battle_Ship_Game
                     if(Attemps == 0 || ShipHits == 0)
                     {
                         // GameOver or we wont!!
-                        if(ShipHits == 0 && Attemps >= 0)
+                        if(ShipHits == 0 && Attemps > 0)
                         {
                             isGameActive = false;
                             isShipSunk = true;
@@ -71,12 +70,14 @@ namespace Battle_Ship_Game
                 
                 PrintAttempsAndHits();
 
+                if(Attemps == 0)
+                {
+                   message.PrintGameOver();
+                }
                 
                 if(isShipSunk)
                 {
-                    Console.WriteLine("**********************************");
-                    Console.WriteLine(" **********  YOU WON!!! **********");
-                    Console.WriteLine("**********************************");
+                    message.PrintGameWon();
                 }
 
                 // end the game
@@ -198,6 +199,8 @@ namespace Battle_Ship_Game
         {
             message.PrintWelcomeMessage();
            
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.White;
 
             string gridLine = "";
             string secondLine = "---";
@@ -244,7 +247,9 @@ namespace Battle_Ship_Game
             {
                 message.PrintShotResult(isMissShot);
 
-            }         
+            }
+
+            Console.ResetColor();         
         }
 
         public bool CheckUniqueShot(Shot shotToValidate)
