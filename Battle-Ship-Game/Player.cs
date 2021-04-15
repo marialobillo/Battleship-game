@@ -40,8 +40,6 @@ namespace Battle_Ship_Game
                 (shotToValidate.SpotY < 10 && shotToValidate.SpotY >= 0) )
             {
                 isValidShot = true;
-                Console.WriteLine("X : ", shotToValidate.SpotX);
-                Console.WriteLine("Y : ", shotToValidate.SpotY);
             }
             
             return isValidShot;

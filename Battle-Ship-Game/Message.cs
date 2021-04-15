@@ -10,7 +10,7 @@ namespace Battle_Ship_Game
         public void PrintWelcomeMessage()
         {
             Console.Clear();
-            Console.WriteLine(" ** BattleShip Game ** ");
+            Console.WriteLine("\n ** BattleShip Game ** ");
             Console.WriteLine("=======================");
 
         }
@@ -37,18 +37,18 @@ namespace Battle_Ship_Game
         public void PrintGameOver()
         {
             ChangeConsoleColor(ConsoleColor.Red, ConsoleColor.White);
-            Console.WriteLine("//////////////////////////////////////////");
-            Console.WriteLine("/////////// Game Over ////////////////////");
-            Console.WriteLine("//////////////////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////////");
+            Console.WriteLine("/////////// Game Over ////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////////");
             Console.ResetColor();
         }
 
         public void PrintGameWon()
         {
             ChangeConsoleColor(ConsoleColor.Green, ConsoleColor.White);
-            Console.WriteLine("//////////////////////////////////////////");
-            Console.WriteLine("/////////// You Won!! ////////////////////");
-            Console.WriteLine("//////////////////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////////");
+            Console.WriteLine("/////////// You Won!! ////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////////");
             Console.ResetColor();
         }
         

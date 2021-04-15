@@ -39,13 +39,9 @@ namespace Battle_Ship_Game
              while(isGameActive)
             {
                 // Ask Player for a Shot
-                
-               
                 bool isValidUniqueShot = AskForValidUniqueShot();
                
-                // Check the Shot...hit, miss, 
-                // Update the board
-                // Notice the shot to the Player
+                
                 if(isValidUniqueShot)
                 {
                     isCheckedShot = CheckShotOnBoard();
@@ -167,7 +163,6 @@ namespace Battle_Ship_Game
                     for(var j = CoordY; j <= CoordY; j ++)
                     {
                         gameBoard[i, j] = SpotStatus.Ship;
-
                     }
                 }
             } else            
@@ -185,7 +180,6 @@ namespace Battle_Ship_Game
                         gameBoard[i, j] = SpotStatus.Ship;
                     }
                 }
-
             }
         }
 
@@ -201,14 +195,7 @@ namespace Battle_Ship_Game
 
             string gridLine = "";
             string secondLine = "---";
-            // // Print 1-10 for columns
-            // foreach (var CoordY in numbers){
-            //     gridLine = gridLine + "    " + (CoordY + 1);
-            //     secondLine = secondLine + "-----";
-            // }
-            // Console.WriteLine(gridLine);
-            // Console.WriteLine(secondLine);
-            // Print the board
+            
             gridLine = "";
             foreach (var CoordY in numbers)
             {
@@ -220,7 +207,8 @@ namespace Battle_Ship_Game
                        gridLine = gridLine + "  ~  ";
                    }
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Ship){
-                       gridLine = gridLine + " WPW ";
+                    //    gridLine = gridLine + " WPW "; // uncomment this line to see the boat
+                        gridLine = gridLine + "  ~  ";
                    }
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Miss){
                        gridLine = gridLine + "  O  ";
@@ -228,9 +216,7 @@ namespace Battle_Ship_Game
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Hit){
                        gridLine = gridLine + "  X  ";
                    }
-                   if(gameBoard[CoordX, CoordY] == SpotStatus.Sunk){
-                       gridLine = gridLine + " !!X!! ";
-                   }
+                
                    if(CoordX == 9)
                    {
                        Console.WriteLine("                                                     ");
@@ -253,7 +239,6 @@ namespace Battle_Ship_Game
             if(isCheckedShot)
             {
                 message.PrintShotResult(isMissShot);
-
             }
 
             Console.ResetColor();         
@@ -277,6 +262,5 @@ namespace Battle_Ship_Game
 
             return isUniqueShot;
         }
-
     }
 }

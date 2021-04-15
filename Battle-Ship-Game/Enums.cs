@@ -16,11 +16,8 @@ namespace Battle_Ship_Game
         InValid = 0,
         Valid = 1,
         Unique = 2,
-
         Miss = 3,
-
         Hit = 4,
-
         Sunk = 5
     }
 }
