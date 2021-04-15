@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oOyTunuyGjvoPpA9croG/bzkQl0a0qpOLotMv1GDD0zc3Bu45crFQ5FHvEKDObYNqwxBHsv43q4I/v1TtAKstw==",
+  "dgSpecHash": "B8iExK2egrua/D0upQYPKhH81y5Ib0eTn25V4qGi/wghapKvRuvX6OW8KWCDeYH6xC848Z5uSbZP6UUzUh1XxQ==",
   "success": true,
-  "projectFilePath": "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
+  "projectFilePath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

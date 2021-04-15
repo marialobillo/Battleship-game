@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {}
+    "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {}
   },
   "projects": {
-    "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {
+    "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
+        "projectUniqueName": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
         "projectName": "Battle-Ship-Game",
-        "projectPath": "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
+        "projectPath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/Battle-Ship-Game.csproj",
         "packagesPath": "/home/maria/.nuget/packages/",
-        "outputPath": "/home/maria/projects/rotos/Battleship-game/Battle-Ship-Game/obj/",
+        "outputPath": "/home/maria/projects/mastermind/Battleship-game/Battle-Ship-Game/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/maria/.nuget/NuGet/NuGet.Config"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

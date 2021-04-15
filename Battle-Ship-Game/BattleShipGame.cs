@@ -72,7 +72,7 @@ namespace Battle_Ship_Game
 
                 if(Attemps == 0)
                 {
-                   message.PrintGameOver();
+                    message.PrintGameOver();
                 }
                 
                 if(isShipSunk)
@@ -80,8 +80,7 @@ namespace Battle_Ship_Game
                     message.PrintGameWon();
                 }
 
-                // end the game
-                // isGameActive = false;
+               
             }
         }
 
