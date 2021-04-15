@@ -79,8 +79,6 @@ namespace Battle_Ship_Game
                 {
                     message.PrintGameWon();
                 }
-
-               
             }
         }
 

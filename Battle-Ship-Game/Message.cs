@@ -20,14 +20,16 @@ namespace Battle_Ship_Game
             Console.WriteLine("\n");
             if(isMissShot)
             {
+                ChangeConsoleColor(ConsoleColor.Red, ConsoleColor.White);
                 Console.WriteLine("\t*** You MISS. Try again!! ***");
             } 
             else
             {
+                ChangeConsoleColor(ConsoleColor.Green, ConsoleColor.Black);
                 Console.WriteLine("\t*** You HIT. Well done!! ***");
             }
             Console.WriteLine("-----------------------------------------------");
-            
+            Console.ResetColor();
         }
 
         
