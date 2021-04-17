@@ -55,7 +55,7 @@ namespace Battle_Ship_Game
                     if(Attemps == 0 || ShipHits == 0)
                     {
                         // GameOver or we wont!!
-                        if(ShipHits == 0 && Attemps > 0)
+                        if(ShipHits == 0 && Attemps >= 0)
                         {
                             isGameActive = false;
                             isShipSunk = true;
@@ -66,14 +66,16 @@ namespace Battle_Ship_Game
                 
                 PrintAttempsAndHits();
 
-                if(Attemps == 0)
-                {
-                    message.PrintGameOver();
-                }
-                
                 if(isShipSunk)
                 {
                     message.PrintGameWon();
+                    return;
+                }
+
+                if(Attemps == 0)
+                {
+                    message.PrintGameOver();
+                    return;
                 }
             }
         }
@@ -207,8 +209,8 @@ namespace Battle_Ship_Game
                        gridLine = gridLine + "  ~  ";
                    }
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Ship){
-                    //    gridLine = gridLine + " WPW "; // uncomment this line to see the boat
-                        gridLine = gridLine + "  ~  ";
+                    //    gridLine = gridLine + " [B] "; // uncomment this line to see the boat
+                        gridLine = gridLine + "  ~  ";   // comment this line to see the boat
                    }
                    if(gameBoard[CoordX, CoordY] == SpotStatus.Miss){
                        gridLine = gridLine + "  O  ";
